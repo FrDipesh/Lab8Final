@@ -132,16 +132,15 @@ public class InputHelper {
 
     public static String getYNConfirm(Scanner scan, String prompt) {
         boolean validYN = false;
-        String userInput = "";
-        String question;
+
+        String question= "";
 
         System.out.println(prompt);
         do {
-            System.out.println("Type [Y] for Yes or [N] for No.");
             if (scan.hasNextLine()) {
                 question = scan.nextLine();
                 if (question.equalsIgnoreCase("y")) {
-                    validYN = false;
+                    validYN = true;
                 } else if (question.equalsIgnoreCase("n")) {
                     validYN = true;
                 } else {
@@ -149,7 +148,7 @@ public class InputHelper {
                 }
             }
         } while (!validYN);
-        return userInput;
+        return question;
     }
 }
 
