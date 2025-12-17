@@ -150,6 +150,24 @@ public class InputHelper {
         } while (!validYN);
         return question;
     }
+
+    public static String getRegExString(Scanner scan, String prompt, String regExPattern){
+        boolean valid = false;
+        String userInput;
+
+
+        System.out.println(prompt);
+        do {
+            userInput = scan.nextLine();
+            if (userInput.matches(regExPattern)) {
+                valid = true;
+            }
+            else {
+                System.out.println("Error, must match specified pattern");
+            }
+        } while (!valid);
+        return userInput;
+    }
 }
 
 
